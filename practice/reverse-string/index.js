@@ -7,8 +7,8 @@ function reverseString(str) {
   return result;
 }
 
-console.log(reverseString("Anurag"));
-console.log(reverseString("Hello World !!!"));
+console.log(reverseString("Brown Fox"));
+console.log(reverseString("Hello World 1 !!!"));
 
 //using for-of loop
 function reverseUsingForOfLoop(str) {
@@ -19,8 +19,8 @@ function reverseUsingForOfLoop(str) {
   return result;
 }
 
-console.log(reverseString("Anurag"));
-console.log(reverseString("Hello World !!!"));
+console.log(reverseUsingForOfLoop("Black Fox"));
+console.log(reverseUsingForOfLoop("Hello World 2 !!!"));
 
 // 1. convert string to array
 // 2. apply reverse() method on the array
@@ -29,12 +29,12 @@ function reverseStringUsingReverse(str) {
   return str.split("").reverse().join("");
 }
 
-console.log(reverseStringUsingReverse("Anurag"));
-console.log(reverseStringUsingReverse("Hello World !!!"));
+console.log(reverseStringUsingReverse("Blue Fox"));
+console.log(reverseStringUsingReverse("Hello World 3 !!!"));
 
 //using reduce method to reverse a string
 function reverseUsingReduce(str) {
   return str.split("").reduce((rev, item) => item + rev, "");
 }
-console.log(reverseUsingReduce("Anurag"));
-console.log(reverseUsingReduce("Hello World !!!"));
+console.log(reverseUsingReduce("Red Fox"));
+console.log(reverseUsingReduce("Hello World 4 !!!"));
