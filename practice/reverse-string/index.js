@@ -31,3 +31,10 @@ function reverseStringUsingReverse(str) {
 
 console.log(reverseStringUsingReverse("Anurag"));
 console.log(reverseStringUsingReverse("Hello World !!!"));
+
+//using reduce method to reverse a string
+function reverseUsingReduce(str) {
+  return str.split("").reduce((rev, item) => item + rev, "");
+}
+console.log(reverseUsingReduce("Anurag"));
+console.log(reverseUsingReduce("Hello World !!!"));
