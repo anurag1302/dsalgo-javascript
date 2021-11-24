@@ -10,6 +10,18 @@ function reverseString(str) {
 console.log(reverseString("Anurag"));
 console.log(reverseString("Hello World !!!"));
 
+//using for-of loop
+function reverseUsingForOfLoop(str) {
+  let result = "";
+  for (let item of str) {
+    result = item + result;
+  }
+  return result;
+}
+
+console.log(reverseString("Anurag"));
+console.log(reverseString("Hello World !!!"));
+
 // 1. convert string to array
 // 2. apply reverse() method on the array
 // 3. convert the array back to string
