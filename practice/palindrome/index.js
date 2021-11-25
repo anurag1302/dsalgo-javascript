@@ -1,5 +1,4 @@
 //Palindrome
-
 function isPalindrome(str) {
   if (!str) {
     return "Invalid Input";
@@ -28,15 +27,12 @@ function isPalindromeUsingEvery(str) {
     return "Invalid Input";
   }
   let trimmedStr = str.replace(/ +/g, "");
-  return trimmedStr
-    .replace(" ", "")
-    .split("")
-    .every((item, index) => {
-      return (
-        item.toLowerCase() ===
-        trimmedStr[trimmedStr.length - index - 1].toLowerCase()
-      );
-    });
+  return trimmedStr.split("").every((item, index) => {
+    return (
+      item.toLowerCase() ===
+      trimmedStr[trimmedStr.length - index - 1].toLowerCase()
+    );
+  });
 }
 
 console.log(isPalindromeUsingEvery("abba"));
