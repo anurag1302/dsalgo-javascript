@@ -1,43 +1,50 @@
 //Palindrome
 
-// function palindrome(str) {
-//   if (!str) {
-//     return "Invalid Input";
-//   }
-//   let reversedStr = str
-//     .replace(" ", "")
-//     .split("")
-//     .reduce((rev, item) => item + rev, "");
-
-//   return str.replace(" ", "").toLowerCase() === reversedStr.toLowerCase();
-// }
-
-// console.log(palindrome("abba"));
-// console.log(palindrome("abcd"));
-// console.log(palindrome("racecar"));
-// console.log(palindrome("civic"));
-// console.log(palindrome("taco cat"));
-// console.log(palindrome("Aibohphobia"));
-// console.log(palindrome(null));
-// console.log(palindrome(""));
-
-function palindromeUsingEvery(str) {
+function isPalindrome(str) {
   if (!str) {
     return "Invalid Input";
   }
-  return str
+  let reversedStr = str
+    .replace(/ +/g, "")
+    .split("")
+    .reduce((rev, item) => item + rev, "");
+
+  return str.replace(/ +/g, "").toLowerCase() === reversedStr.toLowerCase();
+}
+
+console.log(isPalindrome("abba"));
+console.log(isPalindrome("abcd"));
+console.log(isPalindrome("racecar"));
+console.log(isPalindrome("civic"));
+console.log(isPalindrome("taco cat"));
+console.log(isPalindrome("Aibohphobia"));
+console.log(isPalindrome(null));
+console.log(isPalindrome(""));
+console.log(isPalindrome("A Santa Lived As a Devil At NASA"));
+
+//Alternate implementation using every() method
+function isPalindromeUsingEvery(str) {
+  if (!str) {
+    return "Invalid Input";
+  }
+  let trimmedStr = str.replace(/ +/g, "");
+  return trimmedStr
     .replace(" ", "")
     .split("")
     .every((item, index) => {
-      return item.toLowerCase() === str[str.length - index - 1].toLowerCase();
+      return (
+        item.toLowerCase() ===
+        trimmedStr[trimmedStr.length - index - 1].toLowerCase()
+      );
     });
 }
 
-console.log(palindromeUsingEvery("abba"));
-console.log(palindromeUsingEvery("abcd"));
-console.log(palindromeUsingEvery("racecar"));
-console.log(palindromeUsingEvery("civic"));
-console.log(palindromeUsingEvery("taco cat"));
-console.log(palindromeUsingEvery("Aibohphobia"));
-console.log(palindromeUsingEvery(null));
-console.log(palindromeUsingEvery(""));
+console.log(isPalindromeUsingEvery("abba"));
+console.log(isPalindromeUsingEvery("abcd"));
+console.log(isPalindromeUsingEvery("racecar"));
+console.log(isPalindromeUsingEvery("civic"));
+console.log(isPalindromeUsingEvery("taco cat"));
+console.log(isPalindromeUsingEvery("Aibohphobia"));
+console.log(isPalindromeUsingEvery(null));
+console.log(isPalindromeUsingEvery(""));
+console.log(isPalindromeUsingEvery("A Santa Lived As a Devil At NASA"));
