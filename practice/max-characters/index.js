@@ -6,14 +6,11 @@ function maxCharacters(str) {
   let maxCharacter = "";
 
   for (let i = 0; i < str.length; i++) {
-    if (!chars[str[i]]) {
-      chars[str[i]] = 1;
-    } else {
-      chars[str[i]]++;
-    }
+    let temp = str[i];
+    //if chars[temp] is undefined, keep the count as 1, else increase the count by +1
+    chars[temp] = !chars[temp] ? 1 : chars[temp] + 1;
   }
-  console.log(chars);
-
+  //a loop can be run thru an OBJECT via for-in loop
   for (let key in chars) {
     if (chars[key] > maxCount) {
       maxCount = chars[key];
@@ -25,3 +22,4 @@ function maxCharacters(str) {
 }
 
 console.log(maxCharacters("abbcccccdddddde"));
+console.log(maxCharacters("11111 22 3 4 0009999999"));
