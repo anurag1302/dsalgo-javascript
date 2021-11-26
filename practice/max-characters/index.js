@@ -1,5 +1,5 @@
-//max characters
-//"abbcccccddddd"
+//max characters implementation
+
 function maxCharacters(str) {
   const chars = {};
   let maxCount = 0;
@@ -7,7 +7,10 @@ function maxCharacters(str) {
 
   for (let i = 0; i < str.length; i++) {
     let temp = str[i];
-    //if chars[temp] is undefined, keep the count as 1, else increase the count by +1
+    //if there does not exist any value for a character key in the chars object
+    //it is safe to say that the character key has been encountered for the 1st time, hence
+    //to compare it we negate the undefined value to truthy and assign the value as 1 to the key
+    //else we increment it by 1
     chars[temp] = !chars[temp] ? 1 : chars[temp] + 1;
   }
   //a loop can be run thru an OBJECT via for-in loop
