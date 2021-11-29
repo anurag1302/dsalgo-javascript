@@ -1,5 +1,4 @@
 //max characters implementation
-
 function maxCharacters(str) {
   const chars = {};
   let maxCount = 0;
