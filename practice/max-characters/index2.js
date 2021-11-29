@@ -5,11 +5,7 @@ function maxCharacters(str) {
   let maxCharacter = "";
 
   for (let char of str) {
-    if (chars.hasOwnProperty(char)) {
-      chars[char]++;
-    } else {
-      chars[char] = 1;
-    }
+    chars[char] = chars.hasOwnProperty(char) ? chars[char] + 1 : 1;
   }
   //a loop can be run thru an OBJECT via for-in loop
   for (let key in chars) {
